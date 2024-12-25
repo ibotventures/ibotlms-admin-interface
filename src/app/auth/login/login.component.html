@@ -1,0 +1,30 @@
+ <div class="wrapper">
+     <div class="container">
+        <div class="left-panel">
+            <img [attr.src]="card" alt="Illustration"> <!-- Replace 'login.png' with the path to your image -->
+            <!-- <h2>We bring the store to your door</h2> -->
+        </div>
+        <div class="right-panel">
+            <div class="login-container">
+                <div class="logo">
+                    <img [attr.src]="logo" alt="Logo"> <!-- Replace 'logo.png' with your actual logo file -->
+                </div>
+                <h2>Login</h2>
+                <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" [(ngModel)]="email" required>
+                    </div>
+                    
+                    <div>
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" [(ngModel)]="password" required>
+                    </div>
+                    
+                    <button type="submit" [disabled]="!loginForm.valid">Login</button>
+                </form>
+                <p>Don’t have an account? <a [routerLink]="'/auth/signup'">Sign up</a></p>
+            </div>
+        </div>
+    </div>
+</div>  

@@ -1,0 +1,73 @@
+<div class="dialog-content">
+  <!-- <h2 class="dialog-title">Add Course</h2> -->
+
+  <form [formGroup]="courseForm" class="module-form" (ngSubmit)="onSubmit()">
+    
+    <!-- First Row: Course Name and Course Description -->
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Course Name</mat-label>
+        <input matInput id="course_name" type="text" formControlName="course_name" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Course Description</mat-label>
+        <textarea matInput id="course_description" rows="3" formControlName="course_description"></textarea>
+      </mat-form-field>
+    </div>
+
+    <!-- Second Row: Course Duration and Course Price -->
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Course Duration (in hours)</mat-label>
+        <input matInput id="course_duration" type="number" formControlName="course_duration" />
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Course Price</mat-label>
+        <input matInput id="course_price" type="number" formControlName="course_price" />
+      </mat-form-field>
+    </div>
+
+    <!-- Third Row: Status Checkbox -->
+    <div class="form-row">
+      <div class="form-field">
+        <mat-checkbox formControlName="status">Status</mat-checkbox>
+      </div>
+    </div>
+
+    <!-- Product Dropdown -->
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Product</mat-label>
+        <mat-select id="product" formControlName="product">
+          <mat-option *ngFor="let product of products" [value]="product.id">
+            {{ product.product_name }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <!-- File Upload -->
+    <div class="file-upload">
+      <label class="file-label" for="course_cover_image">Course Cover Image</label>
+      <input id="course_cover_image" type="file" class="file-input" (change)="onFileChange($event)" />
+    </div>
+
+    <!-- Video URL -->
+    <div class="form-row">
+      <mat-form-field appearance="outline" class="form-field input-field">
+        <mat-label>Video URL</mat-label>
+        <input matInput id="video" type="url" formControlName="video" />
+      </mat-form-field>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="dialog-actions">
+      <button mat-button class="cancel-button" type="button" (click)="onCancel()">Cancel</button>
+      <button mat-raised-button class="save-button" color="primary" type="submit" [disabled]="isSubmitting">
+        Save
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,179 @@
+/* Container Styling */
+.students-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f5f7fa;
+}
+
+/* Header Styling */
+.students-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 20px; /* Adjusted padding */
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Title Styling */
+.title {
+  font-size: 24px;
+  margin: 0;
+  color: #2c3e50;
+  font-weight: 600; /* Bolder title */
+}
+
+/* Actions Wrapper */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Search Box Styling */
+.search-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.search-box input {
+  border: none;
+  padding: 8px 10px; /* Adjusted padding */
+  outline: none;
+  font-size: 14px;
+  color: #6c757d;
+}
+
+.search-box .search-button {
+  background: none;
+  border: none;
+  padding: 8px 10px; /* Adjusted padding */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+}
+
+.search-box .search-button i {
+  font-size: 18px;
+}
+
+/* Dropdown Styling */
+.status-dropdown {
+  padding: 8px 10px;
+  font-size: 14px;
+  color: #6c757d;
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: white;
+  cursor: pointer;
+}
+
+/* Add Button Styling */
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #6f52ed;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 14px; /* Adjusted padding */
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-button i {
+  font-size: 18px;
+}
+
+.add-button:hover {
+  background-color: #5539c6;
+}
+
+.container {
+  padding: 16px;
+}
+
+table {
+  width: 100%;
+}
+
+th.mat-header-cell,
+td.mat-cell {
+  text-align: center; /* Center alignment for header and cells */
+  vertical-align: middle;
+}
+
+th.mat-header-cell {
+  font-weight: normal; /* Removed bolder header font */
+  background-color: transparent; /* Reverted to no specific background */
+  border-bottom: none; /* Removed subtle border */
+}
+
+td.mat-cell {
+  font-weight: normal; /* Reverted font-weight */
+  border-bottom: none; /* Removed cell separation */
+}
+
+/* Action Buttons */
+button[mat-icon-button] {
+  background: transparent;
+  border: none;
+  color: #757575; /* Neutral gray color */
+  transition: color 0.3s;
+}
+
+button[mat-icon-button]:hover {
+  color: #3f51b5; /* Material design primary color */
+}
+
+/* Menu Item Styling */
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  padding: 8px 16px;
+}
+
+.mat-menu-item:hover {
+  background-color: rgba(63, 81, 181, 0.1); /* Soft blue highlight */
+  color: #3f51b5;
+}
+
+/* Icon spacing in the menu */
+.mat-menu-item mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #757575; /* Icon gray color */
+}
+
+.mat-menu-item:hover mat-icon {
+  color: #3f51b5; /* Icon color changes on hover */
+}
+
+table {
+  background-color: #f9f9f9;
+}
+
+/* Additional styling for the icon button alignment */
+td.mat-cell {
+  text-align: center; /* Aligns action buttons in the center */
+  vertical-align: middle;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  vertical-align: middle;
+}

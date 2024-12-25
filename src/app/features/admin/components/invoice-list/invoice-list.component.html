@@ -1,0 +1,77 @@
+<div class="invoice-list-container">
+  <h2>Offline Purchases</h2>
+  <div class="mat-elevation-z8">
+    <table mat-table [dataSource]="invoices" class="mat-table" matSort>
+      <!-- Vendor Name -->
+      <ng-container matColumnDef="vendor_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Vendor Name</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.vendor_name }}</td>
+      </ng-container>
+
+      <!-- Customer Name -->
+      <ng-container matColumnDef="customer_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Customer Name</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.customer_name }}</td>
+      </ng-container>
+
+      <!-- Product Name -->
+      <ng-container matColumnDef="product_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Product Name</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.product_name }}</td>
+      </ng-container>
+
+      <!-- Product Price -->
+      <ng-container matColumnDef="product_price">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Price</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.product_price | currency }}</td>
+      </ng-container>
+
+      <!-- Product Quantity -->
+      <ng-container matColumnDef="product_quantity">
+        <th mat-header-cell *matHeaderCellDef>Quantity</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.product_quantity }}</td>
+      </ng-container>
+
+      <!-- Payment Term -->
+      <ng-container matColumnDef="payment_term">
+        <th mat-header-cell *matHeaderCellDef>Payment Term</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.payment_term }}</td>
+      </ng-container>
+
+      <!-- Order ID -->
+      <ng-container matColumnDef="order_id">
+        <th mat-header-cell *matHeaderCellDef>Order ID</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.order_id }}</td>
+      </ng-container>
+
+      <!-- Transaction Number -->
+      <ng-container matColumnDef="transaction_number">
+        <th mat-header-cell *matHeaderCellDef>Transaction #</th>
+        <td mat-cell *matCellDef="let invoice">{{ invoice.transaction_number }}</td>
+      </ng-container>
+
+      <!-- Status -->
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>Status</th>
+        <td mat-cell *matCellDef="let invoice" [ngClass]="invoice.status ? 'active' : 'inactive'">
+          {{ invoice.status ? 'Completed' : 'Pending' }}
+        </td>
+      </ng-container>
+
+      <!-- Actions -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let invoice">
+          <button mat-button (click)="viewDetails(invoice)">View</button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Rows -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25]"></mat-paginator>
+  </div>
+</div>

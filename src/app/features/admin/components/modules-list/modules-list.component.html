@@ -1,0 +1,83 @@
+<div class="module-list-container">
+    <div class="module-list-info">
+      <h2>Modules for Course</h2>
+      <p>Total Modules: {{ modules.data.length }}</p>
+    </div>
+    <div class="course-list-actions">
+        <!-- <button mat-raised-button class="filter-button">
+          <span class="icon">☰</span> Filtered By <span class="arrow">›</span>
+        </button> -->
+        <button mat-raised-button class="add-list-button" (click)="openDialog()">+ Add Module</button>
+      </div>
+</div>
+  
+    <div class="container mat-elevation-z8">
+      <table mat-table [dataSource]="modules.data" class="mat-table" matSort>
+        
+        <!-- Module Name -->
+        <ng-container matColumnDef="module_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Module Name</th>
+          <td mat-cell *matCellDef="let module">{{ module.module_name }}</td>
+        </ng-container>
+  
+        <!-- Module Description -->
+        <ng-container matColumnDef="module_description">
+          <th mat-header-cell *matHeaderCellDef>Description</th>
+          <td mat-cell *matCellDef="let module">{{ module.module_description }}</td>
+        </ng-container>
+  
+        <!-- Intro -->
+        <ng-container matColumnDef="intro">
+          <th mat-header-cell *matHeaderCellDef>Intro</th>
+          <td mat-cell *matCellDef="let module">
+            <a (click)="openPdf(module.id, module.intro)">View Intro</a>
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="content">
+          <th mat-header-cell *matHeaderCellDef>Content</th>
+          <td mat-cell *matCellDef="let module">
+            <a (click)="openPdf(module.id, module.content)">View Content</a>
+          </td>
+        </ng-container>
+        
+        <ng-container matColumnDef="activity">
+          <th mat-header-cell *matHeaderCellDef>Activity</th>
+          <td mat-cell *matCellDef="let module">
+            <a (click)="openPdf(module.id, module.activity)">View Activity</a>
+          </td>
+        </ng-container>
+  
+        <!-- Actions -->
+        <ng-container matColumnDef="actions">
+          <th mat-header-cell *matHeaderCellDef>Actions</th>
+          <td mat-cell *matCellDef="let module">
+            <button mat-button [matMenuTriggerFor]="menu" aria-label="Actions">
+              <mat-icon>more_vert</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu">
+              <button mat-menu-item (click)="editModule(module)">
+                <mat-icon>edit</mat-icon>
+                <span>Edit Module</span>
+              </button>
+              <button mat-menu-item (click)="editAssessment(module)">
+                <mat-icon>visibility</mat-icon>
+                <span>View Assessment</span>
+              </button>
+              <button mat-menu-item (click)="deleteModule(module)">
+                <mat-icon>delete</mat-icon>
+                <span>Delete Module</span>
+              </button>
+            </mat-menu>
+          </td>
+        </ng-container>
+  
+        <!-- Table Headers and Rows -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+  
+      <!-- Paginator -->
+      <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 25]" showFirstLastButtons></mat-paginator>
+    </div>
+  

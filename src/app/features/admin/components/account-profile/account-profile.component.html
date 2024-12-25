@@ -1,0 +1,98 @@
+<div class="profile-container">
+  <!-- Sidebar -->
+  <mat-card class="sidebar">
+    <!-- User Info Section -->
+    <div class="user-info">
+      <div mat-card-avatar class="user-avatar">
+        <img [src]="user.profile || 'default-profile.png'" alt="User Avatar" />
+      </div>
+      <div class="user-details">
+        <h2>{{ user.first_name }} {{ user.last_name }}</h2>
+        <p>{{ user.email }}</p>
+      </div>
+      <button mat-icon-button class="menu-icon">
+        <mat-icon>more_vert</mat-icon>
+      </button>
+    </div>
+
+    <!-- Account Balance Section -->
+    <mat-divider></mat-divider>
+    <div class="account-balance">
+      <p>Account Balance</p>
+      <h3>12.395769 <span>USD</span></h3>
+      <p class="pending">Pending <span>0.344939 USD</span></p>
+    </div>
+
+    <!-- Sidebar Navigation -->
+    <mat-list>
+      <mat-list-item class="list-item" routerLink="/personal-information">
+        <div class="icon-text-wrapper">
+          <mat-icon matListIcon class="list-icon">person</mat-icon>
+          <h4 matLine class="list-text">Personal Information</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="list-item" routerLink="/notifications">
+        <div class="icon-text-wrapper">
+          <mat-icon matListIcon class="list-icon">notifications</mat-icon>
+          <h4 matLine class="list-text">Notifications</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="list-item" routerLink="/account-activity">
+        <div class="icon-text-wrapper">
+          <mat-icon matListIcon class="list-icon">assessment</mat-icon>
+          <h4 matLine class="list-text">Account Activity</h4>
+        </div>
+      </mat-list-item>
+      <mat-list-item class="list-item" routerLink="/security-settings">
+        <div class="icon-text-wrapper">
+          <mat-icon matListIcon class="list-icon">lock</mat-icon>
+          <h4 matLine class="list-text">Security Settings</h4>
+        </div>
+      </mat-list-item>
+    </mat-list>
+
+    <!-- Last Login Info -->
+    <mat-divider></mat-divider>
+    <div class="login-info">
+      <p>Last Login</p>
+      <p>{{ user.updated_at | date: 'short' }}</p>
+    </div>
+  </mat-card>
+
+  <!-- Personal Info Section -->
+  <div class="personal-info-container">
+    <div class="header">
+      <h1>Personal Information</h1>
+      <p>Basic info, like your name and address, that you use on Nio Platform.</p>
+      <mat-icon class="edit-icon" (click)="openEditDialog()">edit</mat-icon>
+    </div>
+
+    <div class="details-section">
+      <div class="head"><h3>BASICS</h3></div>
+      <div class="info-row">
+        <span class="label">Full Name</span>
+        <span class="value">{{ user.first_name }} {{ user.middle_name }} {{ user.last_name }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Display Name</span>
+        <span class="value">{{ user.username }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Email</span>
+        <span class="value">{{ user.email }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Phone Number</span>
+        <span class="value">{{ user.mobile || 'Not added yet' }}</span>
+      </div>
+      <div class="info-row">
+        <span class="label">Date of Birth</span>
+        <span class="value">29 Feb, 1986</span> <!-- Replace if you have DOB in API -->
+      </div>
+      <div class="info-row">
+        <span class="label">Address</span>
+        <span class="value">{{ user.address }}, {{ user.city }}, {{ user.state }}, {{ user.country }}</span>
+      </div>
+    </div>
+  </div>
+</div>

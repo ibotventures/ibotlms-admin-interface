@@ -1,0 +1,80 @@
+.invoice-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.invoice-header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.invoice-header h1 {
+  font-size: 2em;
+  color: #333;
+}
+
+.invoice-details {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.vendor-info, .customer-info {
+  width: 48%;
+}
+
+.vendor-info h3, .customer-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-info h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.product-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+}
+
+.product-table th, .product-table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.product-table th {
+  background-color: #f4f4f4;
+}
+
+.invoice-footer {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.invoice-footer p {
+  font-weight: bold;
+  margin: 5px 0;
+}
+
+.download-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.download-btn:hover {
+  background-color: #0056b3;
+}

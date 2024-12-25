@@ -1,0 +1,61 @@
+<!-- Error message -->
+<div *ngIf="errorMessage" class="error-message">
+    {{ errorMessage }}
+  </div>
+  
+  <!-- Certification list -->
+  <div *ngIf="certifications.length > 0" class="certifications-container">
+    <div *ngFor="let certification of certifications" class="certification-item">
+      <div class="certification-header">
+        <!-- Heading on the left -->
+        <h2 class="certification-title">{{ certification.name }}</h2>
+  
+        <!-- Actions (Buttons aligned to the right) -->
+        <div class="certification-actions">
+          <button class="filter-button" aria-label="Filter Certifications">
+            <span class="icon">☰</span> Filtered By <span class="arrow">›</span>
+          </button>
+          <button class="add-list-button" (click)="openQuestDialog()">+ Add Questions</button>
+        </div>
+      </div>
+  
+      <!-- Certification description -->
+      <p class="certification-description">{{ certification.description }}</p>
+    </div>
+  </div>
+  <div *ngIf="certifications.length === 0 && !errorMessage">
+    <button class="add-list-button" (click)="openDialog()">+ Add Certification</button>
+  </div>
+  
+  
+  <!-- Display certification questions if no error and there are questions -->
+  <div *ngIf="!errorMessage && certification_questions.length > 0" class="grid-container">
+    <div *ngFor="let question of certification_questions" class="card">
+      <div class="card-header">
+        <h2 class="question-title">{{ question.question }}</h2>
+      </div>
+      <ul class="options-list">
+        <li>Option 1: {{ question.option1 }}</li>
+        <li>Option 2: {{ question.option2 }}</li>
+        <li>Option 3: {{ question.option3 }}</li>
+        <li>Option 4: {{ question.option4 }}</li>
+      </ul>
+      <p class="correct-answer">Answer: {{ question.answer }}</p>
+  
+      <!-- Action buttons -->
+      <div class="card-actions">
+        <button mat-icon-button class="edit-btn" (click)="editQuestion(question)" aria-label="Edit Question">
+          <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-icon-button class="delete-btn" (click)="deleteQuestion(question)" aria-label="Delete Question">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <!-- No assessments message -->
+  <div *ngIf="!errorMessage && certification_questions.length === 0" class="no-assessments-message">
+    No assessments available.
+  </div>
+  

@@ -1,0 +1,153 @@
+/* Prevent overflow causing scrollbars */
+html, body {
+  margin: 0; /* Remove any default margin */
+  padding: 0; /* Remove any default padding */
+  overflow: hidden; /* Disable scrolling globally */
+  height: 100%; /* Ensure the body occupies full height */
+}
+
+/* Adjust the sidenav container to fit within viewport */
+.sidenav-container {
+  height: 80vh; /* Adjust height to prevent overflow */
+  overflow: auto; /* Allow scrolling within the sidenav */
+}
+
+/* Header styling remains unchanged */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+  background-color: #b6d4ffe2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: auto;
+  min-height: 3rem;
+}
+
+.logo img {
+  height: 4rem;
+}
+
+/* Sidenav */
+.sidenav {
+  width: 240px;
+  background-color: #f9fafb;
+  height: 100%; /* Full container height */
+  overflow-y: auto; /* Allow scrolling inside sidenav if content exceeds */
+}
+
+/* Main content section */
+main {
+  overflow: auto; /* Allow scrolling only in the main content */
+  height: calc(100vh - 4rem); /* Adjust for header height dynamically */
+}
+
+/* Styling for list items in the sidenav */
+.mat-list-item {
+  overflow: hidden;
+  white-space: nowrap; 
+  display: flex;
+  align-items: center;
+  font-size: 1rem; /* Standard font size */
+  padding: 0.8rem 1rem; /* Comfortable padding */
+  color: #333; /* Default text color */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.mat-list-item:hover {
+  background-color: #f0f4f8; /* Light background on hover */
+  border-radius: 4px; /* Slightly rounded hover effect */
+}
+
+.active {
+  background-color: #e5e7eb; /* Highlight active item */
+  border-left: 4px solid #6c63ff; /* Active item indicator */
+}
+
+/* Adjust icons inside list items */
+.sidenav-container .mat-icon {
+  margin-right: 16px; /* Space between icon and text */
+  font-size: 24px; /* Standard icon size */
+}
+
+/* General styling for the menu trigger item */
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.8rem 1rem; /* Comfortable padding */
+  font-size: 1rem; /* Standard text size */
+  color: #333; /* Darker text for readability */
+  text-decoration: none; /* Remove underline */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.menu-item:hover {
+  background-color: #f0f4f8; /* Light hover background */
+  border-radius: 4px; /* Add slight corner rounding */
+}
+
+.menu-item mat-icon {
+  margin-right: 16px; /* Space between icon and text */
+  font-size: 24px; /* Standard icon size */
+}
+
+.menu-text {
+  flex-grow: 1; /* Ensures text fills the space */
+}
+
+.expand-icon {
+  margin-left: auto; /* Push expand icon to the right */
+  font-size: 20px; /* Slightly smaller size for expand icon */
+}
+
+/* Dropdown menu styling */
+mat-menu {
+  padding: 0; /* Remove default padding */
+}
+
+mat-menu-item {
+  display: flex;
+  align-items: center;
+  font-size: 0.9rem; /* Slightly smaller than list items */
+  padding: 0.5rem 1rem; /* Comfortable padding for menu items */
+}
+
+mat-menu-item mat-icon {
+  margin-right: 12px; /* Spacing for icons in menu */
+  font-size: 20px; /* Adjust icon size in menu */
+}
+
+/* Hover effects for menu items */
+mat-menu-item:hover {
+  background-color: #e3e8ef; /* Subtle hover color for menu */
+}
+
+/* Styling for the nav container */
+.header-nav {
+  display: flex;
+  justify-content: flex-start; /* Aligns the content to the left */
+  align-items: center; /* Vertically centers the content */
+  padding: 10px 20px; /* Padding around the nav */
+}
+
+/* Styling for the menu toggle button */
+.header-nav button {
+  background-color: transparent; /* Transparent background */
+  border: none; /* Remove border */
+  cursor: pointer; /* Cursor pointer to indicate clickability */
+  display: flex; /* Ensures the button and icon are aligned */
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add a subtle hover effect to the button */
+.header-nav button:hover {
+  background-color: rgba(255, 255, 255, 0.1); /* Light hover background */
+  border-radius: 4px; /* Rounded corners on hover */
+}
+
+/* Style for the icon inside the button */
+.header-nav mat-icon {
+  color: #fff; /* White color for the icon */
+  font-size: 34px; /* Icon size */
+}

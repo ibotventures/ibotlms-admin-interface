@@ -1,0 +1,42 @@
+<div class="dialog-container">
+    <h1 class="text-lg font-bold mb-4">Add New Question</h1>
+    <form [formGroup]="questionForm" (ngSubmit)="onSubmit()">
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Question</mat-label>
+        <input matInput formControlName="question" />
+      </mat-form-field>
+  
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Option 1</mat-label>
+        <input matInput formControlName="option1" />
+      </mat-form-field>
+  
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Option 2</mat-label>
+        <input matInput formControlName="option2" />
+      </mat-form-field>
+  
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Option 3</mat-label>
+        <input matInput formControlName="option3" />
+      </mat-form-field>
+  
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Option 4</mat-label>
+        <input matInput formControlName="option4" />
+      </mat-form-field>
+  
+      <mat-form-field class="w-full mb-4">
+        <mat-label>Answer</mat-label>
+        <input matInput formControlName="answer" />
+      </mat-form-field>
+  
+      <div class="flex justify-end mt-4">
+        <button mat-button (click)="onCancel()">Cancel</button>
+        <button mat-raised-button color="primary" [disabled]="!questionForm.valid" type="submit">
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
+  

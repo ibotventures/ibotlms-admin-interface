@@ -1,0 +1,46 @@
+<div class="wrapper">
+    <div class="container">
+      <div class="left-side">
+        <!-- Background Illustration and Text -->
+        <div class="left-content">
+          <img [src]="card" alt="Illustration">
+        </div>
+      </div>
+      <div class="right-side">
+        <div class="signup-container">
+          <!-- Logo Section -->
+          <div class="form-header">
+            <img [src]="logo" alt="Logo" class="logo">
+            <h2>Sign Up</h2>
+          </div>
+          
+          <!-- Signup Form -->
+          <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <input type="text" id="name" formControlName="name" placeholder="Name" required>
+              <input type="text" id="phone" formControlName="phone" placeholder="Phone No" required>
+            </div>
+            <input type="email" id="email" formControlName="email" placeholder="Email" required>
+            <input type="password" id="password" formControlName="password" placeholder="Password" required>
+            
+            <p>Address</p>
+            <input type="text" id="street" formControlName="street" placeholder="Street" required>
+            
+            <div class="form-group">
+              <input type="text" id="city" formControlName="city" placeholder="City" required>
+              <input type="text" id="state" formControlName="state" placeholder="State" required>
+            </div>
+            
+            <div class="form-group">
+              <input type="text" id="country" formControlName="country" placeholder="Country" required>
+              <input type="text" id="pin" formControlName="pin" placeholder="Pin" required>
+            </div>
+            
+            <button type="submit" [disabled]="signupForm.invalid">SIGN UP</button>
+            <p class="login-link">Already have an account? <a [routerLink]="'/auth/login'">Log in</a></p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

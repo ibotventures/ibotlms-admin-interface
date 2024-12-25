@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .module-list-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f8fc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .module-list-info h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .module-list-info p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+
+  .course-list-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .filter-button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 10px 15px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .filter-button .icon,
+  .filter-button .arrow {
+    font-size: 16px;
+  }
+  
+  .add-list-button {
+    padding: 10px 20px;
+    background-color: #6a5acd;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-list-button:hover {
+    background-color: #5848c2;
+  }
+  
+  .container {
+    padding: 16px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #f9f9f9;
+    margin-top: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    text-align: left;
+    padding: 12px 15px;
+  }
+  
+  th.mat-header-cell {
+    background-color: #f5f8fc;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  td.mat-cell {
+    background-color: #fff;
+    color: #666;
+    font-size: 14px;
+  }
+  
+  td.mat-cell a {
+    color: #6a5acd;
+    text-decoration: none;
+  }
+  
+  td.mat-cell a:hover {
+    color: #5848c2;
+    text-decoration: underline;
+  }
+  
+  /* Actions button styles */
+  button[mat-icon-button] {
+    background: transparent;
+    border: none;
+    color: #757575;
+    transition: color 0.3s;
+  }
+  
+  button[mat-icon-button]:hover {
+    color: #3f51b5;
+  }
+  
+  .mat-menu-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    color: #333;
+    padding: 8px 16px;
+  }
+  
+  .mat-menu-item:hover {
+    background-color: rgba(63, 81, 181, 0.1);
+    color: #3f51b5;
+  }
+  
+  .mat-menu-item mat-icon {
+    margin-right: 8px;
+    font-size: 20px;
+    color: #757575;
+  }
+  
+  .mat-menu-item:hover mat-icon {
+    color: #3f51b5;
+  }
+  
+  .mat-paginator {
+    margin-top: 20px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px 20px;
+  }
+  
+  /* Paginator button styles */
+  .mat-paginator button {
+    color: #333;
+    border-radius: 4px;
+    padding: 8px 12px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .mat-paginator button:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .mat-paginator .mat-paginator-range-actions {
+    display: none;
+  }
+  
+  /* Icon styling */
+  .mat-icon {
+    font-size: 18px;
+    color: #757575;
+  }
+  
+  /* Styling for module status */
+  .module-status {
+    font-weight: bold;
+  }
+  
+  .module-status.active {
+    color: #4caf50; /* Green for active */
+  }
+  
+  .module-status.pending {
+    color: #ff9800; /* Orange for pending */
+  }
+  
+  .module-status.inactive {
+    color: #f44336; /* Red for inactive */
+  }
+  
+  /* Style adjustments for table layout */
+  table mat-header-row, table mat-row {
+    text-align: center;
+  }
+  
+  th.mat-header-cell, td.mat-cell {
+    vertical-align: middle;
+  }
+  

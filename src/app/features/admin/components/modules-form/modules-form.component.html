@@ -1,0 +1,40 @@
+<h2 mat-dialog-title class="dialog-title">Add Module</h2>
+
+<form [formGroup]="moduleForm" (ngSubmit)="onSave()" class="module-form">
+  <mat-dialog-content class="dialog-content">
+    <!-- Module Name -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Module Name</mat-label>
+      <input matInput formControlName="module_name" class="input-field" placeholder="Enter module name">
+    </mat-form-field>
+
+    <!-- Module Description -->
+    <mat-form-field appearance="fill" class="form-field">
+      <mat-label>Module Description</mat-label>
+      <textarea matInput formControlName="module_description" class="input-field" placeholder="Enter module description"></textarea>
+    </mat-form-field>
+
+    <!-- Intro -->
+    <div class="file-upload">
+      <label for="intro" class="file-label">Upload Intro</label>
+      <input type="file" id="intro" (change)="onFileSelect($event, 'intro')" class="file-input">
+    </div>
+
+    <!-- Content -->
+    <div class="file-upload">
+      <label for="content" class="file-label">Upload Content</label>
+      <input type="file" id="content" (change)="onFileSelect($event, 'content')" class="file-input">
+    </div>
+
+    <!-- Activity -->
+    <div class="file-upload">
+      <label for="activity" class="file-label">Upload Activity</label>
+      <input type="file" id="activity" (change)="onFileSelect($event, 'activity')" class="file-input">
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions class="dialog-actions">
+    <button mat-button (click)="onCancel()" class="cancel-button">Cancel</button>
+    <button mat-raised-button color="primary" type="submit" [disabled]="moduleForm.invalid" class="save-button">Save</button>
+  </mat-dialog-actions>
+</form>

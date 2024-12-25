@@ -1,0 +1,113 @@
+.dialog-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    text-align: center;
+    color: #333;
+  }
+  
+  .module-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .dialog-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .form-field {
+    width: 100%;
+  }
+  
+  .input-field {
+    font-size: 16px;
+  }
+  
+  .file-upload {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .file-label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #555;
+  }
+  
+  .file-input {
+    border: 1px solid #ccc;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+  
+  .cancel-button {
+    background-color: #f5f5f5;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px 16px;
+    font-size: 14px;
+    transition: background-color 0.3s;
+  }
+  
+  .cancel-button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .save-button {
+    font-size: 14px;
+    padding: 8px 16px;
+    color: #fff;
+    background-color: #1976d2;
+    border-radius: 4px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+  
+  .save-button:disabled {
+    background-color: #bdbdbd;
+    cursor: not-allowed;
+  }
+  
+  .save-button:hover:not(:disabled) {
+    background-color: #1565c0;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.24);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .dialog-content {
+      padding: 10px;
+    }
+  
+    .form-field,
+    .file-upload {
+      width: 100%;
+    }
+  
+    .file-label,
+    .input-field,
+    .file-input {
+      font-size: 14px;
+    }
+  
+    .cancel-button,
+    .save-button {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  

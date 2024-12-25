@@ -1,0 +1,56 @@
+<div class="products-container">
+  <div class="products-header">
+    <!-- Title -->
+    <h2 class="products-title">Products</h2>
+
+    <!-- Action Buttons -->
+    <div class="products-actions">
+      <button class="add-list-button" (click)="openDialog()">+ Add Product</button>
+      <button class="add-list-category" (click)="openCategoryDialog()">+ Add Category</button>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="categories && categories.length > 0; else noCategories" class="container">
+  <div class="category-grid">
+    <div class="category-card" *ngFor="let category of categories">
+      <mat-card class="card">
+        <mat-card-header>
+          <mat-card-title class="card-title">{{ category.name }}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="card-age">{{ category.ageRange }}</p>
+          <p class="card-level">Level: {{ category.level }}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
+<ng-template #noCategories>
+  <p>No categories available.</p>
+</ng-template>
+
+<div class="product-container">
+  <div class="product-card" *ngFor="let product of products">
+    <!-- Product Image -->
+    <div class="product-image">
+      <img [src]="product.product_image" alt="{{ product.product_name }}" />
+      <div class="image-overlay">
+        <mat-icon class="edit-icon" (click)="editProduct(product)">edit</mat-icon>
+        <mat-icon class="delete-icon" (click)="deleteProduct(product)">delete</mat-icon>
+      </div>
+    </div>
+
+    <!-- Product Details -->
+    <div class="product-details">
+      <h3 class="product-name">{{ product.product_name }}</h3>
+      <p class="product-description">
+        {{ product.description }}
+      </p>
+      <div class="product-meta">
+        <span class="product-price">Rs . {{ product.price }}</span>
+        <span class="product-make">Made in {{ product.make }}</span>
+      </div>
+    </div>
+  </div>
+</div>

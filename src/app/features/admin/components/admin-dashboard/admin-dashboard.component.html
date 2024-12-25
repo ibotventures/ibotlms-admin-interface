@@ -1,0 +1,84 @@
+<header class="header">
+  <div class="logo">
+    <img [attr.src]="logo" alt="Logo"> <!-- Replace 'logo.png' with your actual logo file -->
+  </div>
+  <nav class="header-nav">
+    <!-- Menu Toggle Button to open sidenav -->
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </nav>
+</header>
+
+<!-- Side Navigation -->
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #sidenav mode="side" class="sidenav">
+    <mat-nav-list>
+
+      <a mat-list-item routerLink="/admin/home/statistics" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>dashboard</mat-icon>
+        <span>Dashboard</span>
+      </a>
+
+      <a mat-list-item routerLink="/admin/home/products" routerLinkActive="active" (click)="sidenav.close()">
+        <mat-icon>shopping_cart</mat-icon>
+        <span>Products</span>
+      </a>
+
+      <a mat-list-item [matMenuTriggerFor]="coursesMenu" class="menu-item">
+        <mat-icon>book</mat-icon>
+        <span class="menu-text">Courses</span>
+      </a>
+      <mat-menu #coursesMenu="matMenu">
+        <button mat-menu-item routerLink="/admin/home/course-categories">
+          <mat-icon>category</mat-icon>
+          Categories
+        </button>
+        <button mat-menu-item routerLink="/admin/home/courses-list">
+          <mat-icon>list</mat-icon>
+          Course List
+        </button>
+      </mat-menu>      
+
+      <a mat-list-item routerLink="/admin/home/students-list" (click)="sidenav.close()">
+        <mat-icon>people</mat-icon>
+        <span>Students</span>
+      </a>
+
+      <a mat-list-item routerLink="/admin/home/messages" (click)="sidenav.close()">
+        <mat-icon>message</mat-icon>
+        <span>Reviews</span>
+      </a>
+
+      <a mat-list-item routerLink="/admin/home/profile" (click)="sidenav.close()">
+        <mat-icon>account_circle</mat-icon>
+        <span>Admin Profile</span>
+      </a>
+
+      <a mat-list-item [matMenuTriggerFor]="invoiceMenu" class="menu-item">
+        <mat-icon>receipt</mat-icon>
+        <span class="menu-text">Invoice</span>
+      </a>
+      <mat-menu #invoiceMenu="matMenu">
+        <button mat-menu-item routerLink="/admin/home/invoice-list">
+          <mat-icon>list</mat-icon>
+          Invoice List
+        </button>
+        <button mat-menu-item routerLink="/admin/home/invoice-form">
+          <mat-icon>note_add</mat-icon>
+          Invoice Form
+        </button>
+      </mat-menu>
+
+      <a mat-list-item routerLink="/admin/home/logout" (click)="logout()">
+        <mat-icon>logout</mat-icon>
+        <span>Logout</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

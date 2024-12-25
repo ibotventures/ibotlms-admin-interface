@@ -1,0 +1,95 @@
+<div class="dialog-container">
+    <h2 mat-dialog-title>Add Product</h2>
+  
+    <form (ngSubmit)="onSubmit()" #productForm="ngForm" mat-dialog-content>
+      <!-- Product Name -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Product Name</mat-label>
+        <input
+          matInput
+          type="text"
+          name="productName"
+          [(ngModel)]="productData.product_name"
+          required
+        />
+      </mat-form-field>
+  
+      <!-- Description -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Description</mat-label>
+        <textarea
+          matInput
+          name="description"
+          [(ngModel)]="productData.description"
+          required
+        ></textarea>
+      </mat-form-field>
+  
+      <!-- Category -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Category</mat-label>
+        <mat-select
+          [(ngModel)]="productData.category"
+          name="category"
+          required
+          #categorySelect="ngModel"
+        >
+          <mat-option *ngFor="let category of categories" [value]="category.id">
+            {{ category.category_name }}
+          </mat-option>
+        </mat-select>
+        <mat-error *ngIf="categorySelect.invalid">Category is required.</mat-error>
+      </mat-form-field>
+  
+      <!-- Price -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Price</mat-label>
+        <input
+          matInput
+          type="number"
+          name="price"
+          [(ngModel)]="productData.price"
+          required
+        />
+      </mat-form-field>
+  
+      <!-- Make -->
+      <mat-form-field appearance="outline" class="form-field">
+        <mat-label>Make</mat-label>
+        <input
+          matInput
+          type="text"
+          name="make"
+          [(ngModel)]="productData.make"
+          required
+        />
+      </mat-form-field>
+  
+      <!-- Product Photo -->
+      <div class="form-group">
+        <label for="productPhoto">Product Photo</label>
+        <input
+          type="file"
+          id="productPhoto"
+          name="productPhoto"
+          (change)="onFileSelect($event)"
+          required
+        />
+      </div>
+    </form>
+  
+    <mat-dialog-actions align="end">
+      <button mat-button (click)="closeDialog()">Cancel</button>
+      <button
+        mat-raised-button
+        color="primary"
+        type="button"
+        [disabled]="loading"
+        (click)="onSubmit()"
+      >
+        <span *ngIf="!loading">Submit</span>
+        <mat-spinner *ngIf="loading" diameter="20"></mat-spinner>
+      </button>
+    </mat-dialog-actions>
+  </div>
+  

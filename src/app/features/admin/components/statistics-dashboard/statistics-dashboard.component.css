@@ -1,0 +1,204 @@
+/* Container for both sections */
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f5f7fa;
+  }
+  
+  
+  /* Header Section */
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+  }
+  
+  .dashboard-text h1 {
+    font-size: 24px;
+    margin: 0;
+    color: #2c3e50;
+  }
+  
+  .dashboard-text p {
+    margin: 5px 0 0;
+    color: #6c757d;
+    font-size: 14px;
+  }
+  
+  .dashboard-actions {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .date-filter,
+  .reports-button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .date-filter {
+    background-color: #ffffff;
+    border: 1px solid #ced4da;
+    color: #495057;
+  }
+  
+  .reports-button {
+    background-color: #1f78cbe1;
+    color: #ffffff;
+    border: none;
+  }
+  
+  .reports-button:hover {
+    background-color: #4078d7e3;
+  }
+  
+  /* Sales Cards Section */
+  .sales-cards {
+    display: flex;
+    gap: 20px;
+  }
+  
+  .sales-card {
+    flex: 1;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .sales-card h3 {
+    font-size: 16px;
+    color: #6c757d;
+    margin: 0 0 10px;
+  }
+  
+  .sales-card h2 {
+    font-size: 28px;
+    color: #2c3e50;
+    margin: 0;
+  }
+  
+  .comparison {
+    font-size: 14px;
+    color: #6c757d;
+    margin-top: 5px;
+  }
+  
+  .percentage {
+    font-weight: bold;
+  }
+  
+  .percentage.positive {
+    color: #28a745; /* Green for positive growth */
+  }
+  
+  /* Placeholder for Charts */
+  .chart {
+    height: 80px;
+    margin-top: 15px;
+    border-radius: 5px;
+  }
+  
+  .chart.purple {
+    background: linear-gradient(to top, #e0bbff, #9f7aea);
+  }
+  
+  .chart.blue {
+    background: linear-gradient(to top, #d0e7ff, #4680ff);
+  }
+
+  .metrics-cards {
+    display: flex; /* Use Flexbox for horizontal alignment */
+    flex-direction: row; /* Ensure the cards are arranged horizontally */
+    gap: 20px; /* Add space between the cards */
+    justify-content: space-between; /* Distribute space between items */
+    align-items: flex-start; /* Align items at the top */
+  }
+  
+  .card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1; /* Ensure equal width for both cards */
+  }
+  
+  
+  .active-students h3, .traffic-sources h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .active-students p, .traffic-sources p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 15px;
+  }
+  
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+  }
+  
+  .metrics div {
+    text-align: center;
+  }
+  
+  .metrics h1 {
+    font-size: 24px;
+    margin-bottom: 5px;
+  }
+  
+  .metrics span.increase {
+    color: green;
+    font-size: 14px;
+  }
+  
+  .metrics span.decrease {
+    color: red;
+    font-size: 14px;
+  }
+  
+  .chart {
+    height: 150px;
+    background: #e0e7ff;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .date-range {
+    font-size: 12px;
+    color: #999;
+    margin-top: 10px;
+  }
+  
+  .traffic-sources .donut-chart {
+    height: 150px;
+    background: #f4f4ff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+  }
+  
+  .traffic-sources .traffic-list {
+    list-style: none;
+  }
+  
+  .traffic-sources .traffic-list li {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 8px;
+  }

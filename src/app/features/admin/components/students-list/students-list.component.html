@@ -1,0 +1,95 @@
+<div class="students-container">
+  <div class="students-header">
+    <div>
+      <h1 class="title">Students</h1>
+    </div>
+    <div class="actions">
+      <div class="search-box">
+        <input
+          type="text"
+          placeholder="Search by name"
+          [(ngModel)]="searchText"
+          (input)="applyFilter()"
+        />
+        <button class="search-button">
+          <i class="material-icons">search</i>
+        </button>
+      </div>
+      <select class="status-dropdown">
+        <option value="" disabled selected>Status</option>
+        <option value="active">Active</option>
+        <option value="inactive">Inactive</option>
+      </select>
+      <button class="add-button">
+        <i class="material-icons">add</i> Add
+      </button>
+    </div>
+  </div>
+
+  <div class="container mat-elevation-z8">
+    <table mat-table [dataSource]="students" class="mat-table" matSort>
+      <!-- Select Checkbox Column -->
+      <ng-container matColumnDef="select">
+        <th mat-header-cell *matHeaderCellDef>
+          <mat-checkbox
+            (change)="$event ? masterToggle() : null"
+            [checked]="isAllSelected()"
+            [indeterminate]="selection.hasValue() && !isAllSelected()">
+          </mat-checkbox>
+        </th>
+        <td mat-cell *matCellDef="let student">
+          <mat-checkbox
+            (click)="$event.stopPropagation()"
+            (change)="$event ? selection.toggle(student) : null"
+            [checked]="isSelected(student)">
+          </mat-checkbox>
+        </td>
+      </ng-container>
+
+      <!-- Username Column -->
+      <ng-container matColumnDef="user">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Username</th>
+        <td mat-cell *matCellDef="let student">{{ student.username }}</td>
+      </ng-container>
+
+      <!-- Email Column -->
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Email</th>
+        <td mat-cell *matCellDef="let student">{{ student.email }}</td>
+      </ng-container>
+
+      <!-- Phone Column -->
+      <ng-container matColumnDef="phone">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Phone</th>
+        <td mat-cell *matCellDef="let student">{{ student.mobile }}</td>
+      </ng-container>
+
+      <!-- Age Column -->
+      <ng-container matColumnDef="age">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Age</th>
+        <td mat-cell *matCellDef="let student">{{ student.age }}</td>
+      </ng-container>
+
+      <!-- Actions Column -->
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef>Actions</th>
+        <td mat-cell *matCellDef="let student">
+          <button mat-icon-button (click)="deleteStudent(student)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Header and Row Definitions -->
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <!-- Paginator -->
+    <mat-paginator
+      [length]="students.data.length"
+      [pageSize]="10"
+      [pageSizeOptions]="[5, 10, 25]">
+    </mat-paginator>
+  </div>
+</div>

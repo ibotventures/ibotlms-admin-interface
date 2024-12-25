@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+.course-list-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f8fc;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.course-list-info h2 {
+  font-size: 20px;
+  color: #333;
+}
+
+.course-list-info p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 5px;
+}
+
+.course-list-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.filter-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 10px 15px;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-button:hover {
+  background-color: #f0f0f0;
+}
+
+.filter-button .icon,
+.filter-button .arrow {
+  font-size: 16px;
+}
+
+.add-list-button {
+  padding: 10px 20px;
+  background-color: #6a5acd;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-list-button:hover {
+  background-color: #a0d9ff;
+}
+
+.container {
+  padding: 16px;
+}
+
+.course-icon {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #e0e0e0;
+  font-weight: bold;
+  margin-right: 8px;
+}
+
+.container .active {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+.pending {
+  color: #ff9800;
+  font-weight: bold;
+}
+
+.active {
+  color: green;
+}
+.inactive {
+  color: red;
+}
+
+table {
+  width: 100%;
+}
+
+button[mat-icon-button] {
+  background: transparent;
+  border: none;
+  color: #757575; /* Neutral gray color */
+  transition: color 0.3s;
+}
+
+button[mat-icon-button]:hover {
+  color: #3f51b5; /* Material design primary color */
+}
+
+/* Style for the action menu */
+.mat-menu-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333333;
+  padding: 8px 16px;
+}
+
+.mat-menu-item:hover {
+  background-color: rgba(63, 81, 181, 0.1); /* Soft blue highlight */
+  color: #3f51b5;
+}
+
+/* Icon spacing in the menu */
+.mat-menu-item mat-icon {
+  margin-right: 8px;
+  font-size: 20px;
+  color: #757575; /* Icon gray color */
+}
+
+.mat-menu-item:hover mat-icon {
+  color: #3f51b5; /* Icon color changes on hover */
+}
+
+table {
+  background-color: #f9f9f9;
+}
+/* Additional styling for the icon button alignment */
+td.mat-cell {
+  text-align: center; /* Aligns action buttons in the center */
+  vertical-align: middle;
+}
+
+th.mat-header-cell {
+  text-align: center;
+  vertical-align: middle;
+}

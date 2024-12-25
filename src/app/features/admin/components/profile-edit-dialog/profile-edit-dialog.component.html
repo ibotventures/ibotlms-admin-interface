@@ -1,0 +1,47 @@
+<h1 mat-dialog-title>Update Profile</h1>
+<mat-dialog-content>
+  <mat-tab-group>
+    <mat-tab label="Personal">
+      <form>
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Full Name</mat-label>
+            <input matInput placeholder="Full Name" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Display Name</mat-label>
+            <input matInput placeholder="Display Name" />
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Phone Number</mat-label>
+            <input matInput placeholder="Phone Number" />
+          </mat-form-field>
+        </div>
+        <div class="form-row">
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Date of Birth</mat-label>
+            <input matInput placeholder="MM/DD/YYYY" />
+          </mat-form-field>
+          <mat-form-field appearance="outline" class="form-field">
+            <mat-label>Nationality</mat-label>
+            <input matInput placeholder="Nationality" />
+          </mat-form-field>
+        </div>
+        <mat-slide-toggle>Use full name to display</mat-slide-toggle>
+      </form>
+    </mat-tab>
+    <mat-tab label="Address">
+      <!-- Address Form Content -->
+    </mat-tab>
+  </mat-tab-group>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button color="primary">Update Profile</button>
+  <button mat-button mat-dialog-close>Cancel</button>
+</mat-dialog-actions>

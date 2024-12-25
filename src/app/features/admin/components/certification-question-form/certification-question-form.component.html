@@ -1,0 +1,67 @@
+<h2 mat-dialog-title>{{ isEditMode ? 'Edit Question' : 'Add New Question' }}</h2>
+
+<form [formGroup]="certificationQuestionForm" (ngSubmit)="onSubmit()">
+  <div mat-dialog-content>
+    <!-- <mat-form-field appearance="fill">
+      <mat-label>Certification</mat-label>
+      <input matInput formControlName="certification" [readonly]="isEditMode">
+      <mat-error *ngIf="certificationQuestionForm.get('certification')?.hasError('required')">
+        Certification is required.
+      </mat-error>
+    </mat-form-field> -->
+
+    <mat-form-field appearance="fill">
+      <mat-label>Question</mat-label>
+      <input matInput formControlName="question">
+      <mat-error *ngIf="certificationQuestionForm.get('question')?.hasError('required')">
+        Question is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Option 1</mat-label>
+      <input matInput formControlName="option1">
+      <mat-error *ngIf="certificationQuestionForm.get('option1')?.hasError('required')">
+        Option 1 is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Option 2</mat-label>
+      <input matInput formControlName="option2">
+      <mat-error *ngIf="certificationQuestionForm.get('option2')?.hasError('required')">
+        Option 2 is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Option 3</mat-label>
+      <input matInput formControlName="option3">
+      <mat-error *ngIf="certificationQuestionForm.get('option3')?.hasError('required')">
+        Option 3 is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Option 4</mat-label>
+      <input matInput formControlName="option4">
+      <mat-error *ngIf="certificationQuestionForm.get('option4')?.hasError('required')">
+        Option 4 is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Answer</mat-label>
+      <input matInput formControlName="answer">
+      <mat-error *ngIf="certificationQuestionForm.get('answer')?.hasError('required')">
+        Answer is required.
+      </mat-error>
+    </mat-form-field>
+  </div>
+
+  <mat-dialog-actions>
+    <button mat-button (click)="onCancel()">Cancel</button>
+    <button mat-button type="submit" [disabled]="!certificationQuestionForm.valid && !isEditMode">Save</button>
+  </mat-dialog-actions>
+  
+</form>

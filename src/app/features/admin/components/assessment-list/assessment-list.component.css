@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+  }
+  
+  .assessment-list-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f8fc;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .assessment-list-info h2 {
+    font-size: 20px;
+    color: #333;
+  }
+  
+  .assessment-list-info p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+  }
+
+  .assessment-list-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+/* Container styling */
+.container {
+    margin: 0 auto;
+    padding: 1rem;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Header styling */
+  h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-align: center;
+    color: #2d3748;
+  }
+  
+  /* Error message styling */
+  .bg-red-100 {
+    background-color: #ffe5e5;
+    color: #d90429;
+    padding: 1rem;
+    border-radius: 4px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+  }
+  
+  /* Grid container */
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid */
+    gap: 1rem; /* Space between cards */
+  }
+  
+  /* Individual card */
+  .card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* So the icon can be positioned inside the card */
+  }
+  
+  /* Hover effect for cards */
+  .card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Card header (question and edit button) */
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Question heading */
+  .card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #1a202c;
+    margin-bottom: 0.5rem;
+  }
+  
+  /* Edit button styling */
+  .edit-btn {
+    color: #4a90e2;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .edit-btn mat-icon {
+    font-size: 1.5rem;
+    color: #4a90e2;
+    transition: color 0.2s ease;
+  }
+  
+  .edit-btn:hover mat-icon {
+    color: #2b7de9; /* Darker blue on hover */
+  }
+  
+  /* Options list */
+  .card .list-disc {
+    padding-left: 1.25rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card .list-disc li {
+    font-size: 1rem;
+    color: #4a5568;
+    margin-bottom: 0.25rem;
+  }
+  
+  /* Answer styling */
+  .card p.font-bold {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-top: 1rem;
+  }
+  
+  /* No assessments message */
+  .text-gray-500 {
+    font-size: 1rem;
+    color: #a0aec0;
+    text-align: center;
+  }
+  
+
+/* Individual card */
+.card {
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background-color: #ffffff;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; /* So the icon can be positioned inside the card */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  
+  /* Card actions container (buttons) */
+  .card-actions {
+    display: flex;
+    justify-content: flex-start; /* Align buttons horizontally */
+    gap: 1rem; /* Space between buttons */
+    margin-top: 1rem; /* Space above buttons */
+    margin-bottom: 0; /* Remove extra bottom margin */
+    align-items: center;
+  }
+  
+  /* Edit button styling */
+  .edit-btn {
+    color: #4a90e2;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  /* Delete button styling */
+  .delete-btn {
+    color: #e53e3e;
+    padding: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .edit-btn mat-icon,
+  .delete-btn mat-icon {
+    font-size: 1.5rem;
+    transition: color 0.2s ease;
+  }
+  
+  /* Hover effects for buttons */
+  .edit-btn:hover mat-icon {
+    color: #2b7de9;
+  }
+  
+  .delete-btn:hover mat-icon {
+    color: #c53030; /* Dark red on hover */
+  }
+  

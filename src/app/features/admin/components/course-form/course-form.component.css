@@ -1,0 +1,121 @@
+/* Reset margins and padding for the dialog content */
+.dialog-content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    max-width: 900px;
+    margin: auto;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form styling */
+  .module-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between rows */
+  }
+  
+  /* Flex for two fields per row */
+  .form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+  }
+  
+  /* Each form field */
+  .form-field {
+    width: 48%; /* Adjust to fit two fields side by side */
+  }
+  
+  /* File upload */
+  .file-upload {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .file-label {
+    margin-bottom: 8px;
+  }
+  
+  .file-input {
+    font-size: 14px;
+  }
+  
+  /* Action Buttons */
+  .dialog-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+  }
+  
+  /* Cancel Button */
+  .cancel-button {
+    background-color: #f0f0f0;
+    color: #333;
+  }
+  
+  /* Save Button */
+  .save-button {
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+  }
+  
+  /* Disabled Save Button */
+  .save-button[disabled] {
+    background-color: #cccccc;
+    color: #999999;
+  }
+  
+  /* Responsiveness for smaller screens */
+  @media (max-width: 768px) {
+    .dialog-content {
+      padding: 10px;
+    }
+  
+    .module-form {
+      padding: 0;
+    }
+  
+    .form-row {
+      flex-direction: column; /* Stack the fields on smaller screens */
+    }
+  
+    .form-field {
+      width: 100%; /* Full width for each field on smaller screens */
+    }
+  
+    .dialog-actions {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .save-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  
+    .cancel-button {
+      width: 100%;
+      margin-top: 10px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .form-field input,
+    .form-field textarea,
+    .file-input,
+    .mat-select {
+      font-size: 14px;
+    }
+  
+    .file-upload {
+      margin-bottom: 15px;
+    }
+  }
+  

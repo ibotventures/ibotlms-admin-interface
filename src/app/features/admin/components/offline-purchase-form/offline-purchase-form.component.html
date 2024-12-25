@@ -1,0 +1,89 @@
+<div class="container">
+    <h2>OFFLINE PURCHASE BILLING</h2>
+    <form #purchaseForm="ngForm" (ngSubmit)="onSubmit(purchaseForm)">
+      <!-- Vendor Information -->
+      <div class="card">
+        <h3>VENDOR INFORMATION</h3>
+        <label for="vendor_name">Name</label>
+        <input id="vendor_name" name="vendor_name" [(ngModel)]="formData.vendor_name" required />
+  
+        <label for="vendor_contact_name">Contact Name</label>
+        <input id="vendor_contact_name" name="vendor_contact_name" [(ngModel)]="formData.vendor_contact_name" required />
+  
+        <label for="vendor_contact_number">Contact Number</label>
+        <input id="vendor_contact_number" name="vendor_contact_number" [(ngModel)]="formData.vendor_contact_number" required />
+  
+        <label for="vendor_email">Email</label>
+        <input id="vendor_email" name="vendor_email" [(ngModel)]="formData.vendor_email" type="email" required />
+  
+        <label for="vendor_address">Address</label>
+        <textarea id="vendor_address" name="vendor_address" [(ngModel)]="formData.vendor_address" required></textarea>
+      </div>
+  
+      <!-- Customer Information -->
+      <div class="card">
+        <h3>CUSTOMER INFORMATION</h3>
+        <label for="customer_name">Name</label>
+        <input id="customer_name" name="customer_name" [(ngModel)]="formData.customer_name" required />
+  
+        <label for="customer_contact_name">Contact Name</label>
+        <input id="customer_contact_name" name="customer_contact_name" [(ngModel)]="formData.customer_contact_name" required />
+  
+        <label for="customer_contact_number">Contact Number</label>
+        <input id="customer_contact_number" name="customer_contact_number" [(ngModel)]="formData.customer_contact_number" required />
+  
+        <label for="customer_email">Email</label>
+        <input id="customer_email" name="customer_email" [(ngModel)]="formData.customer_email" type="email" required />
+  
+        <label for="customer_address">Address</label>
+        <textarea id="customer_address" name="customer_address" [(ngModel)]="formData.customer_address" required></textarea>
+      </div>
+  
+      <!-- Product Information -->
+      <div class="card">
+        <h3>PRODUCT INFORMATION</h3>
+          <label for="product">Product Name</label>
+          <select id="product" name="product" [(ngModel)]="formData.product" required>
+            <option *ngFor="let product of products" [value]="product.id">{{ product.product_name }}</option>
+          </select>
+        
+        <label for="product_price">Product Price</label>
+        <input id="product_price" name="product_price" [(ngModel)]="formData.product_price" type="number" required />
+  
+        <label for="product_quantity">Quantity</label>
+        <input id="product_quantity" name="product_quantity" [(ngModel)]="formData.product_quantity" type="number" required />
+      </div>
+  
+      <!-- Payment Information -->
+      <div class="card">
+        <h3>PAYMENT INFORMATION</h3>
+        <label for="payment_term">Payment Term</label>
+        <select id="payment_term" name="payment_term" [(ngModel)]="formData.payment_term" required>
+          <option value="online">Online</option>
+          <option value="offline">Cash</option>
+          <option value="neft">NEFT</option>
+          <option value="cheque">Cheque</option>
+        </select>
+  
+        <label for="transaction_id">Transaction ID</label>
+        <input id="transaction_number" name="transaction_number" [(ngModel)]="formData.transaction_number" required />
+  
+        <label for="order_id">Order ID</label>
+        <input id="order_id" name="order_id" [(ngModel)]="formData.order_id" required />
+      </div>
+  
+      <!-- Note -->
+      <div class="card">
+        <label>
+          <input type="checkbox" name="confirmation" required />
+          The above information is accurate, and I ensure that the customer has paid for the product purchased.
+        </label>
+        <label for="admin_password">Admin Password</label>
+        <input id="admin_password" name="admin_password" type="password" required />
+      </div>
+  
+      <!-- Submit Button -->
+      <button type="submit" [disabled]="!purchaseForm.valid">SUBMIT</button>
+    </form>
+  </div>
+  

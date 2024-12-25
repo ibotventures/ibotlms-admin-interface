@@ -1,0 +1,59 @@
+<div *ngIf="purchaseData" class="invoice-container">
+  <div class="invoice-header">
+    <h1>Invoice</h1>
+    <p><strong>Order ID:</strong> {{ purchaseData.order_id }}</p>
+    <p><strong>Transaction Number:</strong> {{ purchaseData.transaction_number }}</p>
+  </div>
+
+  <div class="invoice-details">
+    <div class="vendor-info">
+      <h3>Vendor Details</h3>
+      <p><strong>Name:</strong> {{ purchaseData.vendor_name }}</p>
+      <p><strong>Contact:</strong> {{ purchaseData.vendor_contact_name }} - {{ purchaseData.vendor_contact_number }}</p>
+      <p><strong>Email:</strong> {{ purchaseData.vendor_email }}</p>
+      <p><strong>Address:</strong> {{ purchaseData.vendor_address }}</p>
+    </div>
+
+    <div class="customer-info">
+      <h3>Customer Details</h3>
+      <p><strong>Name:</strong> {{ purchaseData.customer_name }}</p>
+      <p><strong>Contact:</strong> {{ purchaseData.customer_contact_name }} - {{ purchaseData.customer_contact_number }}</p>
+      <p><strong>Email:</strong> {{ purchaseData.customer_email }}</p>
+      <p><strong>Address:</strong> {{ purchaseData.customer_address }}</p>
+    </div>
+  </div>
+
+  <div class="product-info">
+    <h3>Product Information</h3>
+    <table class="product-table">
+      <thead>
+        <tr>
+          <th>Product Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>{{ purchaseData.product_name }}</td>
+          <td>{{ purchaseData.product_price | currency }}</td>
+          <td>{{ purchaseData.product_quantity }}</td>
+          <td>{{ purchaseData.product_price * purchaseData.product_quantity | currency }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="invoice-footer">
+    <p><strong>Payment Terms:</strong> {{ purchaseData.payment_term }}</p>
+    <p><strong>Status:</strong> {{ purchaseData.status ? 'Paid' : 'Unpaid' }}</p>
+  </div>
+
+  <footer class="invoice-footer">
+    <p>Invoice was created on a computer and is valid without the signature and seals.</p>
+  </footer>
+
+  <button class="download-btn" (click)="downloadInvoice()">Download Invoice</button>
+
+</div>
