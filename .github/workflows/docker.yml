@@ -23,7 +23,7 @@ jobs:
         username: ${{ github.repository_owner }}
         password: ${{ secrets.BUILD_TOKEN }}
 
-    - name: Build and push Next.js image
+    - name: Build and push Angular.js image
       run: |
         docker build -t ghcr.io/${{ github.repository_owner }}/angular-app:latest .
         docker push ghcr.io/${{ github.repository_owner }}/angular-app:latest
