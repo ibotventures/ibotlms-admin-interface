@@ -29,13 +29,14 @@
             ],
             "scripts": [],
             "allowedCommonJsDependencies": [
-                "canvg",
-                "core-js",
-                "raf",
-                "rgbcolor",
-                "html2canvas",
-                "dompurify"
-              ]
+              "canvg",
+              "core-js",
+              "raf",
+              "rgbcolor",
+              "html2canvas",
+              "dompurify"
+            ],
+            "baseHref": "/admin/"   
           },
           "configurations": {
             "production": {

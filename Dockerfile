@@ -10,6 +10,9 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
+# Install Angular CLI globally
+RUN npm install -g @angular/cli
+
 # Copy the entire Angular project into the container
 COPY . .
 
@@ -17,4 +20,4 @@ COPY . .
 EXPOSE 4200
 
 # Start the Angular development server
-CMD ["npm", "start"]
+CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
