@@ -18,8 +18,8 @@ export class LoginComponent {
 
   email: string = '';
   password: string = '';
-  logo: string = '../../assets/logo.png';
-  card: string = '../../assets/branding.png';
+  logo: string = 'assets/logo.png';
+  card: string = 'assets/branding.png';
 
   constructor(private authService: AuthService, private router: Router) {}
   ngOnInit() {
