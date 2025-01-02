@@ -18,7 +18,7 @@ import { MatMenuModule } from '@angular/material/menu';
   styleUrl: './admin-dashboard.component.css'
 })
 export class AdminDashboardComponent {
-  logo: string = '../../assets/logo.png';
+  logo: string = 'assets/logo.png';
 
   constructor(private router: Router) { }
   logout() {
