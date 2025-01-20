@@ -36,7 +36,7 @@ export class CoursesService {
 
   createCourse(courseData: any): Observable<any> {
     console.log('courseData:', courseData);
-    return this.http.post(`${this.apiUrl}/courses/`, courseData, this.httpOptions);  
+    return this.http.post(`${this.apiUrl}/courses/`, courseData,{headers: this.headers});  
   }
 
   // Update a course (PUT)
