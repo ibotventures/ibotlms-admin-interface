@@ -16,6 +16,9 @@ RUN npm install -g @angular/cli
 # Copy the entire Angular project into the container
 COPY . .
 
+# Build the Angular app with the correct base-href
+RUN ng build --base-href /admin/
+
 # Expose the default Angular development server port
 EXPOSE 4200
 
