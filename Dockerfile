@@ -1,23 +1,20 @@
-# Step 1: Use a Node.js image to run the Angular app
-FROM node:20
+# Step 1: Build the Angular app
+FROM node:18 AS build
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy package.json and package-lock.json
+# Copy package.json and package-lock.json for npm install
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install
 
+# Copy the rest of the application files
+COPY . .
+
 # Install Angular CLI globally
 RUN npm install -g @angular/cli
 
-# Copy the entire Angular project into the container
-COPY . .
-
-# Expose the default Angular development server port
-EXPOSE 4200
-
-# Start the Angular development server
-CMD ["ng", "serve", "--host", "0.0.0.0", "--port", "4200"]
+# Build the Angular app with the correct base-href
+RUN ng build --base-href /admin/
